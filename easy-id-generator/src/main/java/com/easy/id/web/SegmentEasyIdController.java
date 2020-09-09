@@ -2,7 +2,6 @@ package com.easy.id.web;
 
 import com.easy.id.config.Module;
 import com.easy.id.service.EasyIdService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
@@ -24,7 +24,7 @@ import java.util.Set;
 @Module(value = "segment.enable")
 public class SegmentEasyIdController {
 
-    @Autowired
+    @Resource
     @Qualifier("segmentEasyIdService")
     private EasyIdService easyIdService;
 

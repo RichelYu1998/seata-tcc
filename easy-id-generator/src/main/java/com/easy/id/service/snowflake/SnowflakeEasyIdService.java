@@ -4,10 +4,10 @@ import com.easy.id.config.Module;
 import com.easy.id.exception.SystemClockCallbackException;
 import com.easy.id.service.EasyIdService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -22,7 +22,7 @@ import java.util.Set;
 @Module("snowflake.enable")
 @Slf4j
 public class SnowflakeEasyIdService implements EasyIdService {
-    @Autowired
+    @Resource
     private SnowflakeZKHolder snowflakeZKHolder;
     /**
      * 2020-06-01 00:00:00 (UTC+8)

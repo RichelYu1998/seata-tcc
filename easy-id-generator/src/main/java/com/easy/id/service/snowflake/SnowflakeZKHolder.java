@@ -13,13 +13,13 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryUntilElapsed;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class SnowflakeZKHolder {
      */
     private static final String DUMP_PATH = "workerID/workerID.properties";
 
-    @Autowired
+    @Resource
     @Qualifier("updateDataToZKScheduledExecutorService")
     private ScheduledExecutorService scheduledExecutorService;
 

@@ -1,12 +1,13 @@
 package cn.tedu.storage.service;
 
 import cn.tedu.storage.mapper.StorageMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 @Service
 public class StorageServiceImpl implements StorageService {
-    @Autowired
+    @Resource
     private StorageMapper storageMapper;
 
     @Override

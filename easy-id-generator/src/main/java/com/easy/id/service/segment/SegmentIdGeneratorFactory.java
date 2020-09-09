@@ -3,10 +3,10 @@ package com.easy.id.service.segment;
 import com.easy.id.config.Module;
 import com.easy.id.service.generator.AbstractIdGeneratorFactory;
 import com.easy.id.service.generator.IdGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.concurrent.ExecutorService;
 
 /**
@@ -16,10 +16,10 @@ import java.util.concurrent.ExecutorService;
 @Module("segment.enable")
 public class SegmentIdGeneratorFactory extends AbstractIdGeneratorFactory {
 
-    @Autowired
+    @Resource
     private SegmentIdService segmentIdService;
 
-    @Autowired
+    @Resource
     @Qualifier(value = "fetchNextSegmentExecutor")
     private ExecutorService fetchNextSegmentExecutor;
 

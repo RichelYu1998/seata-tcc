@@ -7,10 +7,10 @@ import com.easy.id.entity.SegmentId;
 import com.easy.id.exception.FetchSegmentFailException;
 import com.easy.id.exception.SegmentNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,7 +28,7 @@ public class SegmentIdServiceImpl implements SegmentIdService {
     private final static String UPDATE_SEGMENT_MAX_ID = "update segment set max_id= ?,version=?,updated_at=? where id =? and version=?";
     @Value("${easy-id-generator.segment.fetch-segment-retry-times:2}")
     private int retry;
-    @Autowired
+    @Resource
     private DataSourceConfig.DynamicDataSource dynamicDataSource;
 
     @Override

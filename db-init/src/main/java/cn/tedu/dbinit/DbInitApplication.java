@@ -1,6 +1,5 @@
 package cn.tedu.dbinit;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.ClassPathResource;
@@ -8,13 +7,14 @@ import org.springframework.core.io.support.EncodedResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @SpringBootApplication
 public class DbInitApplication {
 
-    @Autowired
+    @Resource
     private DataSource dataSource;
 
     public static void main(String[] args) {

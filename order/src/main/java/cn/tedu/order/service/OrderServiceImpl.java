@@ -5,20 +5,20 @@ import cn.tedu.order.feign.AccountClient;
 import cn.tedu.order.feign.EasyIdGeneratorClient;
 import cn.tedu.order.feign.StorageClient;
 import cn.tedu.order.mapper.OrderMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Random;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    @Autowired
+    @Resource
     private OrderMapper orderMapper;
-    @Autowired
+    @Resource
     EasyIdGeneratorClient easyIdGeneratorClient;
-    @Autowired
+    @Resource
     private AccountClient accountClient;
-    @Autowired
+    @Resource
     private StorageClient storageClient;
 
     @Override
