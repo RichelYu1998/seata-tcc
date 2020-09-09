@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
                 order.getMoney());
 
         // 修改库存
-        //storageClient.decrease(order.getProductId(), order.getCount());
+        storageClient.decrease(order.getProductId(), order.getCount());
 
         // 修改账户余额
         //accountClient.decrease(order.getUserId(), order.getMoney());

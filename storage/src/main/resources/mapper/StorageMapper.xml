@@ -9,6 +9,21 @@
         <result column="residue" property="residue" jdbcType="INTEGER" />
     </resultMap>
     <update id="decrease">
-      UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = #{productId}
+    UPDATE storage SET used = used + #{count},residue = residue - #{count} WHERE product_id = #{productId}
+  </update>
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT * FROM storage WHERE `product_id`=#{productId}
+    </select>
+
+    <update id="updateFrozen">
+        UPDATE storage SET `residue`=#{residue},`frozen`=#{frozen} WHERE `product_id`=#{productId}
+    </update>
+
+    <update id="updateFrozenToUsed">
+        UPDATE storage SET `frozen`=`frozen`-#{count}, `used`=`used`+#{count} WHERE `product_id`=#{productId}
+    </update>
+
+    <update id="updateFrozenToResidue">
+        UPDATE storage SET `frozen`=`frozen`-#{count}, `residue`=`residue`+#{count} WHERE `product_id`=#{productId}
     </update>
 </mapper>
