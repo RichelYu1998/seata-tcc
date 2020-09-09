@@ -6,7 +6,11 @@ spring:
     url: jdbc:mysql://localhost/seata_account?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
     username: root
     password: Syp950628
-
+  # 事务组设置
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: order_tx_group
 server:
   port: 8081
 
