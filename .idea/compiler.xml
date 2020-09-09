@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="db-init" />
+        <module name="order" />
+        <module name="account" />
+        <module name="storage" />
+        <module name="easy-id-generator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account" target="1.8" />
+      <module name="db-init" target="1.8" />
+      <module name="easy-id-generator" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="order-parent" target="1.8" />
+      <module name="storage" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account" options="-parameters" />
+      <module name="db-init" options="-parameters" />
+      <module name="easy-id-generator" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="storage" options="-parameters" />
+    </option>
+  </component>
+</project>
