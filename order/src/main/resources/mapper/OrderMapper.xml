@@ -13,5 +13,10 @@
         INSERT INTO `order` (`id`,`user_id`,`product_id`,`count`,`money`,`status`)
         VALUES(#{id}, #{userId}, #{productId}, #{count}, #{money},1);
     </insert>
-
+    <update id="updateStatus" >
+        UPDATE `order` SET `status`=#{status} WHERE `id`=#{orderId};
+    </update>
+    <delete id="deleteById">
+        DELETE FROM `order` WHERE `id`=#{orderId}
+    </delete>
 </mapper>
